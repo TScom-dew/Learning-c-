@@ -1,20 +1,72 @@
-// 4.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <cstdlib>
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+//Array
+	int intArr[5]; // Declare an array of 5 integers
+	char charArr[4]; // Declare an array of 4 characters
+	double doubleArr[10]; // Declare an array of 10 doubles
+
+//Indexation
+	intArr[0] = 10; // Assign value to the first element
+	cout << intArr[0] << endl; // Output the first element
+
+	charArr[1] = 'A'; // Assign value to the second element
+//Out of borders
+	int arr[3];
+	arr[0] = 1;
+	arr[1] = 2;
+	arr[2] = 3;
+
+	cout << arr[3]; // Accessing out of bounds (undefined behavior)
+	//Rubbish value
+
+//Initialization
+	int initArr[5] = { 1, 2, 3, 4, 5 }; // Initialize an array with values
+	double initDoubleArr[3] = { 1.1, 2.2, 3.3 }; // Initialize an array with double values
+
+	//Initialization with cycle
+	const int size_arr = 5;
+	int intArr[size_arr];
+
+	for (int i = 0; i < 5; i++) {
+		intArr[i] = i * 10; // Assign values using a loop
+	}
+
+//Iterating through an array for output to the console
+	const int s = 5;
+	int nums[s] = { 10, 20, 30, 40, 50 };
+
+	for (int i = 0; i < s; i++) {
+		cout << nums[i] << " "; // Output each element
+	}
+
+//Iterating through an array for sum
+	const int n = 5;
+	int numbers[n] = { 1, 2, 3, 4, 5 };
+	int sum = 0;
+	for (int i = 0; i < n; i++) {
+		sum += numbers[i]; // Add each element to sum
+	}
+	cout << "\nSum: " << sum << endl; // Output the sum
+
+	//Foreach loop
+	const int m = 5;
+	int arr_foreach[m] = { 5, 10, 15, 20, 25 };
+	for (int num : arr_foreach) {
+		cout << num << " "; // Output each element using foreach
+	}
+
+//Auto
+	for (auto item : nums) {
+		cout << item << " "; // Output each element using auto
+	}
+
+//Rand
+	srand(time(nullptr)); // Seed the random number generator
+	int r = rand();
+	cout << r << endl;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
